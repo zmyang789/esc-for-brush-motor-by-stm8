@@ -1,0 +1,40 @@
+#include "BSP.h"
+
+uint16_t CAPTURE_VAULE_H;
+uint16_t CAPTURE_VAULE_L;
+uint8_t CAPTURE_STA;
+
+uint16_t OUT_VAULE;
+uint16_t OUT_COUNT;
+uint16_t MIDDLE_VAULE;
+
+uint8_t OUT_DIR;
+
+void Init_pwm_in(void)
+{
+  
+  GPIO_Init(GPIOD,GPIO_PIN_4,GPIO_MODE_IN_FL_NO_IT);
+  
+  TIM2_TimeBaseInit(TIM2_PRESCALER_16,0xffff);                    //1us
+  ITC_SetSoftwarePriority(ITC_IRQ_TIM2_CAPCOM,ITC_PRIORITYLEVEL_2);
+  
+  TIM2->IER=0x40;  //使能
+
+  TIM2_ICInit(TIM2_CHANNEL_1,TIM2_ICPOLARITY_RISING,TIM2_ICSELECTION_DIRECTTI,TIM2_ICPSC_DIV1,0x01);   //TIM2通道1，上升沿捕获，直接映射TI，输入不分频，滤波
+
+  TIM2_ITConfig(TIM2_IT_CC1,ENABLE);
+  CAPTURE_STA=STA_DOWN;
+  TIM2_Cmd(ENABLE);
+
+}
+
+void Init_pwm_out(void)
+{
+  GPIO_Init(GPIOD,GPIO_PIN_2,GPIO_MODE_OUT_PP_LOW_FAST);
+  GPIO_Init(GPIOD,GPIO_PIN_3,GPIO_MODE_OUT_PP_LOW_FAST);
+  
+  TIM4_TimeBaseInit(TIM4_PRESCALER_1,0x55);
+  ITC_SetSoftwarePriority(ITC_IRQ_TIM4_OVF,ITC_PRIORITYLEVEL_1);
+  TIM4_ITConfig(TIM4_IT_UPDATE,ENABLE);
+ // TIM4_Cmd(ENABLE);
+}
