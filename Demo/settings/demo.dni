@@ -28,7 +28,7 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [DebugChecksum]
-Checksum=1155879731
+Checksum=-376970937
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -47,8 +47,12 @@ LogFile=_ ""
 [Breakpoints]
 Count=0
 [Aliases]
-A0=_ "D:\STM8\brush_esc\brush_motor_esc\STM8S_StdPeriph_Driver\src\stm8s_tim4.c" ""
-Count=1
+A0=_ "D:\STM8\brush_esc\Demo\BSP\BSP.c" ""
+A1=_ "D:\STM8\brush_esc\Demo\STM8S_StdPeriph_Driver\src\stm8s_tim2.c" ""
+A2=_ "D:\STM8\brush_esc\Demo\main.c" ""
+A3=_ "D:\STM8\brush_esc\Demo\task.c" ""
+A4=_ "D:\STM8\brush_esc\brush_motor_esc\STM8S_StdPeriph_Driver\src\stm8s_tim4.c" ""
+Count=5
 SuppressDialog=0
 [DebuggerSettings]
 DisableInterruptsWhenStepping=0

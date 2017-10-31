@@ -1970,6 +1970,9 @@
   <group>
     <name>user</name>
     <file>
+      <name>$PROJ_DIR$\bibi.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>

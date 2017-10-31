@@ -56,7 +56,7 @@ void out_task(void)
       GPIO_WriteLow(GPIOD,GPIO_PIN_2);   
   }
   
-  if(OUT_COUNT>50)
+  if(OUT_COUNT>40)
     OUT_COUNT=0;
     
 }

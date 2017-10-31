@@ -1,22 +1,22 @@
-"D:\STM8\brush_esc\Demo\STM8S_StdPeriph_Driver\src\stm8s_itc.c"
+"D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\STM8S_StdPeriph_Driver\src\stm8s_itc.c"
 -std=c99
 -ferror-limit=100
 -I
-D:\STM8\brush_esc\Demo
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo
 -I
-D:\STM8\brush_esc\Demo\STM8S_StdPeriph_Driver\inc
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\STM8S_StdPeriph_Driver\inc
 -I
-D:\STM8\brush_esc\Demo\BSP
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\BSP
 -I
 D:\IAR Systems\Embedded Workbench  Evaluation\stm8\inc
 -I
 D:\IAR Systems\Embedded Workbench  Evaluation\stm8\inc\c
 -I
-D:\STM8\brush_esc\Demo
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo
 -I
-D:\STM8\brush_esc\Demo\STM8S_StdPeriph_Driver\inc
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\STM8S_StdPeriph_Driver\inc
 -I
-D:\STM8\brush_esc\Demo\BSP
+D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\BSP
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

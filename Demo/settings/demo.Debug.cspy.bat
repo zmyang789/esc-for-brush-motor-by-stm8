@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\IAR Systems\Embedded Workbench  Evaluation\common\bin\cspybat" -f "D:\STM8\brush_esc\Demo\settings\demo.Debug.general.xcl" --backend -f "D:\STM8\brush_esc\Demo\settings\demo.Debug.driver.xcl" 
+"D:\IAR Systems\Embedded Workbench  Evaluation\common\bin\cspybat" -f "D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\settings\demo.Debug.general.xcl" --backend -f "D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\settings\demo.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\IAR Systems\Embedded Workbench  Evaluation\common\bin\cspybat" -f "D:\STM8\brush_esc\Demo\settings\demo.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\STM8\brush_esc\Demo\settings\demo.Debug.driver.xcl" 
+"D:\IAR Systems\Embedded Workbench  Evaluation\common\bin\cspybat" -f "D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\settings\demo.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\GitHub\doc\esc-for-brush-motor-by-stm8\Demo\settings\demo.Debug.driver.xcl" 
 
 @echo off 
 :end
