@@ -1,7 +1,8 @@
 #include "task.h"
 #include "math.h"
 #include "stdlib.h"
-
+#include "eeprom.h"
+#include "bibi.h"
 /******
 比较任务
 比较捕获值与油门中值
@@ -17,9 +18,9 @@ void compare_task(void)
       OUT_VAULE = abs(CAPTURE_VAULE_H - MIDDLE_VAULE)/10;    
     }
     
-  else if(CAPTURE_VAULE_H>MIDDLE_VAULE+500 && CAPTURE_VAULE_H<MIDDLE_VAULE+1000)
+  else if(CAPTURE_VAULE_H>MIDDLE_VAULE+500 && CAPTURE_VAULE_H<MIDDLE_VAULE+800)
     OUT_VAULE=50;
-  else if(CAPTURE_VAULE_H<MIDDLE_VAULE-500 && CAPTURE_VAULE_H>MIDDLE_VAULE-1000)
+  else if(CAPTURE_VAULE_H<MIDDLE_VAULE-500 && CAPTURE_VAULE_H>MIDDLE_VAULE-800)
     OUT_VAULE=50;
   else
     OUT_VAULE=0;
@@ -61,5 +62,57 @@ void out_task(void)
     
 }
 
+void cali_task(void)
+{
+  uint8_t key=1;
+  uint16_t H,L;
+  
+    if(CAPTURE_VAULE_H<MIDDLE_VAULE+500 && CAPTURE_VAULE_H>MIDDLE_VAULE-500)
+    {
+      if(CAPTURE_VAULE_H>MIDDLE_VAULE+300)
+      {
+        bibi_cali_1();
+        H=CAPTURE_VAULE_H;
+        
+        while(key)
+        {
+          if(CAPTURE_VAULE_H<MIDDLE_VAULE-200)
+            key=0;
+        }
+        
+        
+        delay_t(6000);  //约2s
+        
+        bibi_cali_2();
+        L=CAPTURE_VAULE_H;
+        MIDDLE_VAULE=(H+L)/2;
+        set_calidata(MIDDLE_VAULE);
+      }
+      else
+      {
+        read_calidata();
+        
+      }
+      
+      key=1;
+      delay_t(2000);
+    }
+    while(key)
+    {
+      if(CAPTURE_VAULE_H<MIDDLE_VAULE+50 && CAPTURE_VAULE_H>MIDDLE_VAULE-50)
+      {
+        key=0;
+        bibi_start();
+      }
+      
+      
+    }
+    
 
+  
+  
+  
+  
+  
+}
 

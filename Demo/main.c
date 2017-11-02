@@ -25,6 +25,7 @@
 #include "IOSTM8S103F3.h"
 #include "BSP.h"
 #include "task.h"
+#include "eeprom.h"
 
 /* Private defines -----------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -55,11 +56,19 @@ void main(void)
   
   
   GPIO_Init(LED_GPIO_PORT, (GPIO_Pin_TypeDef)LED_GPIO_PINS, GPIO_MODE_OUT_PP_LOW_FAST);
-  
+  Flash_eeprom_readwrite_Init();
   Init_pwm_in();
+  
   Init_pwm_out();
 
   __enable_interrupt();
+
+  Delay(50000);
+  Delay(50000);
+  Delay(50000);
+  Delay(50000);
+  
+  cali_task();
   while (1)
   {
   

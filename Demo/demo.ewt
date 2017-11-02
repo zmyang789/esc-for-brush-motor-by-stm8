@@ -1952,6 +1952,9 @@
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_clk.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_flash.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</name>
     </file>
     <file>
@@ -1971,6 +1974,9 @@
     <name>user</name>
     <file>
       <name>$PROJ_DIR$\bibi.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\eeprom.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\main.c</name>

@@ -7,6 +7,7 @@
 
 void compare_task(void);
 void out_task(void);
+void cali_task(void);
 
 #endif
 
